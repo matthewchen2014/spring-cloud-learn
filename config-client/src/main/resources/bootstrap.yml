@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: server-config-cluster
+      fail-fast: true
+      retry:
+        initial-interval: 1500
+        max-attempts: 6
+        multiplier: 1.1
+        max-interval: 2000
+server:
+  port: 8080

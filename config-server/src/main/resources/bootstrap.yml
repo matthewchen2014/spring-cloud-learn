@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: server-config-cluster
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/matthewchen2014/spring-cloud-config
+          username: matthewchen2014@hotmail.com
+          password: Shark2018
+          search-paths: /**
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/
