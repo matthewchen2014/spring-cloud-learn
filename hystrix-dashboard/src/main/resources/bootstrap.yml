@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hystrix-dashboard
+server:
+  port: 2001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/

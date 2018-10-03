@@ -29,8 +29,7 @@ public class BookService {
         return new BookConsumerCommand(HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("")).andCommandKey(commandKey), restTemplate, id).execute();
     }
 
-    @Hystrix
-    @CacheResult
+    @com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand
     public Book findCachedBook(Integer id) {
         System.out.println("invoke findCachedBook");
         return restTemplate.getForObject("http://service-provider/book/{id}", Book.class, id);
