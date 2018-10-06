@@ -1,2 +1,5 @@
 server:
   port: 8882
+eureka:
+  instance:
+    hostname: peer2

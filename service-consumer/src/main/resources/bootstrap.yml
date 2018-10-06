@@ -1,5 +1,10 @@
 spring:
   application:
-    name: servcie-consumer
-server:
-  port: 8881
+    name: service-consumer
+eureka:
+  instance:
+    metadata-map:
+      cluster: main
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/

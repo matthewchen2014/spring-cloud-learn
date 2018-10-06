@@ -32,7 +32,7 @@ public class ServiceConsumerApplication {
     @Bean
     public ServletRegistrationBean hystrixMetricsStreamServlet() {
         ServletRegistrationBean registration = new ServletRegistrationBean(new HystrixMetricsStreamServlet());
-        registration.addUrlMappings("/hystrix.stream");
+        registration.addUrlMappings("/hystrix.stream", "/actuator/hystrix.stream");
         return registration;
     }
 }
