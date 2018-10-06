@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 2001
+zuul:
+  routes:
+    service-consumer: /service-consumer/**
+    local:
+      path: /local/**
+      url: forward:/local
+  ignored-services: service-provider,eureka-server-cluster
+  ignored-patterns: /**/ribbon-consumer/**
+  prefix: /api-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/
