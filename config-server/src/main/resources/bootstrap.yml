@@ -9,8 +9,12 @@ spring:
           username: matthewchen2014@hotmail.com
           password: Shark2018
           search-paths: /**
+          force-pull: true
+          delete-untracked-branches: true
       label: master
 eureka:
   client:
     service-url:
       defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/
+encrypt:
+  key: matthew
