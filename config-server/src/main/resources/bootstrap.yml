@@ -7,7 +7,7 @@ spring:
         git:
           uri: https://github.com/matthewchen2014/spring-cloud-config
           username: matthewchen2014@hotmail.com
-          password: Shark2018
+          password: ******
           search-paths: /**
           force-pull: true
           delete-untracked-branches: true
