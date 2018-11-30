@@ -5,6 +5,7 @@ public class DB {
     private String url;
     private String username;
     private String password;
+    private int connection;
 
     public String getUrl() {
         return url;
@@ -28,5 +29,13 @@ public class DB {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getConnection() {
+        return connection;
+    }
+
+    public void setConnection(int connection) {
+        this.connection = connection;
     }
 }

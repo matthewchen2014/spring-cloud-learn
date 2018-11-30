@@ -4,14 +4,30 @@ spring:
   cloud:
     config:
       server:
+        health:
+          repositories:
+            dev:
+              name: client-config
+              profiles: dev
         git:
-          uri: https://github.com/matthewchen2014/spring-cloud-config
+          uri: https://gitee.com/matthewchen2014/spring-cloud-config
           username: matthewchen2014@hotmail.com
-          password: Shark2018
+          password: abcdefgh
           search-paths: /**
           force-pull: true
           delete-untracked-branches: true
-      label: master
+          timeout: 3
+          repos:
+            development:
+              pattern:
+                - '*/dev'
+                - '*/qa'
+              uri: https://gitee.com/matthewchen2014/spring-cloud-config-dev
+            prod:
+              pattern: '*/prod*'
+              cloneOnStart: true
+              uri: https://gitee.com/matthewchen2014/spring-cloud-config-production
+          basedir: /Users/matthew/Documents/cloud-config-repo
 eureka:
   client:
     service-url:

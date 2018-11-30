@@ -4,7 +4,6 @@ spring:
   cloud:
     config:
       label: master
-      profile: dev
       discovery:
         enabled: true
         service-id: server-config-cluster
@@ -14,5 +13,10 @@ spring:
         max-attempts: 6
         multiplier: 1.1
         max-interval: 2000
+  security:
+    user:
+      name: shark
+      password: shark
 server:
   port: 8080
+
