@@ -13,4 +13,6 @@ public class College {
     private Tag tag;
     private List<AdvancedTag> advancedTags;
     private List<Tag> tags;
+    private List<Student> students;
+    private Student[] bestStudents;
 }
